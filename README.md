@@ -1,15 +1,24 @@
 # Meteo-data
-R function to obtain Finnish Meteorological Institute open data
+R function to obtain Finnish Meteorological Institute (FMI) open data
 
 #Description
 This script downloads FMI open meteorological data, which is in XML format and parses it to produce a data.frame with the requested information. It is restricted to download one type of weather data (e.g. daily temperature) from a single weatherstation. While this may seem restrictive, the function can be easily implemented to download multiple datasets and concatenate these.   
 
 # Usage
-Place the text file in your working directory and use the command
+```
+get.met.data(url.name)
+```
+# Arguments
+url.name - string with the name of the URL with FMI data. Must include valid API key 
+
+# Use
+Simply copy the function. Alternatively, place the text file in your working directory and use the command
 ```R
 get.met.data<-dget(“get_met_data.txt”)
 ```
-Note that for the function to work, some further steps are needed as described below
+
+# Note
+For the function to work, some further steps are needed as described below
 
 # Required R packages
 Package XML needs to be installed.
