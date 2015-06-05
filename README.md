@@ -28,16 +28,18 @@ You can check the URL works by pasting it in your browser.
 Apart from daily temperature, other daily weather parameters are daily rain "rrday", snow "snow", minimal temperature "tmin", maximal temperature "tmax".
 Note further that FMI has lots of other data, some browsing on their site is needed to work this out.
 For example, URL for wind-speed with 10 minute interval from Hanko during one day.
-wind.hanko<-"http://data.fmi.fi/fmi-apikey/INSERT-YOUR-API-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::timevaluepair&fmisid=100917&maxlocations=1&starttime=2013-04-23T00:00:00Z&endtime=2013-04-25T23:50:00Z&parameters=windspeedms&
+wind.hanko<-"http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::timevaluepair&fmisid=100917&maxlocations=1&starttime=2013-04-23T00:00:00Z&endtime=2013-04-25T23:50:00Z&parameters=windspeedms&
 
 # Example 1
 
 Extract data on daily temperature and rain from a single station (Tvärminne)
 
-url.tvarminne.temp="http://data.fmi.fi/fmi-apikey/67cdb8db-2a4d-4679-a617-e21970aa76c3/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=tday&"
+url.tvarminne.temp="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=tday&"
+
 temp.tvarminne<-get_met_data(url.tvarminne.temp)
 
-url.tvarminne.rain="http://data.fmi.fi/fmi-apikey/67cdb8db-2a4d-4679-a617-e21970aa76c3/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=rrday&"
+url.tvarminne.rain="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=rrday&"
+
 rain.tvarminne<-get_met_data(url.tvarminne.rain)
 
 
