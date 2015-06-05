@@ -1,0 +1,25 @@
+get.met.data<-function(url.address) {
+require(XML)
+r<-xmlRoot(xmlTreeParse(url.address))
+#below goes directly to "results" node under the root
+metcat<-xmlSApply(r[[1]][[1]][[7]][[1]],function(x) xmlSApply(x,xmlValue))
+#splits the vector with "Z" and "T" which is the last and first character in the time stamp 
+metdat<-data.frame(matrix(
+unlist(strsplit(unlist(strsplit(metcat,"Z")),"T"))
+,xmlSize(r[[1]][[1]][[7]][[1]]),
+,byrow=T))
+year.month.day<-data.frame(matrix(
+unlist(strsplit(as.character(metdat[,1]),"-"))
+,xmlSize(r[[1]][[1]][[7]][[1]]),
+,byrow=T))
+met.data.set<-
+cbind(year.month.day,metdat[,3])
+names(met.data.set)<-c("year","month","day","met.data")
+#convert it to numeric
+met.data.set$year<-as.numeric(as.vector(met.data.set$year))
+met.data.set$month<-as.numeric(as.vector(met.data.set$month))
+met.data.set$day<-as.numeric(as.vector(met.data.set$day))
+met.data.set$met.data<-as.numeric(as.vector(met.data.set$met.data))
+return(met.data.set)
+} #end of function
+# to load using dget, a white line at the end is needed
