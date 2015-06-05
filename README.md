@@ -36,6 +36,7 @@ Extract data on daily temperature and rain from a single station (Tvärminne)
 
 url.tvarminne.temp="http://data.fmi.fi/fmi-apikey/67cdb8db-2a4d-4679-a617-e21970aa76c3/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=tday&"
 temp.tvarminne<-get_met_data(url.tvarminne.temp)
+
 url.tvarminne.rain="http://data.fmi.fi/fmi-apikey/67cdb8db-2a4d-4679-a617-e21970aa76c3/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=rrday&"
 rain.tvarminne<-get_met_data(url.tvarminne.rain)
 
