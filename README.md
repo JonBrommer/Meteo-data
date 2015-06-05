@@ -2,7 +2,9 @@
 R function to obtain Finnish Meteorological Institute (FMI) open data
 
 #Description
-This script downloads FMI open meteorological data, which is in XML format and parses it to produce a data.frame with the requested information. It is restricted to download one type of weather data (e.g. daily temperature) from a single weatherstation. While this may seem restrictive, the function can be easily implemented to download multiple datasets and concatenate these.   
+This script downloads FMI open meteorological data, which is in XML format and parses it to produce a data.frame with the requested information. It is restricted to download one type of weather data (e.g. daily temperature) from a single weatherstation. While this may seem restrictive, the function can be easily implemented to download multiple datasets and concatenate these.
+
+For GIS-oriented data extraction, see the "rOpenGov/fmi" GitHub package by J. Jousimo 
 
 # Usage
 ```
