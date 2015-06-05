@@ -72,7 +72,7 @@ for (i in 1:length(id.vec)) {
 	for (y in 1:length(start.time.string)) {
 		# create URL address
 		url.addr<-
-		paste("http://data.fmi.fi/fmi-apikey/67cdb8db-2a4d-4679-a617-e21970aa76c3/wfs?request=getFeature&storedquery_id=fmi::observations::weather::timevaluepair&fmisid="
+		paste("http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::timevaluepair&fmisid="
 		, id.vec[i]
 		, "&maxlocations=1&starttime="
 		, start.time.string[y]
