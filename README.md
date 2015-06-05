@@ -37,7 +37,8 @@ The URL looks daunting, but is a fairly simple structure. For example, the follo
 url.kajaani.85="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=101725&starttime=1985-01-01T12:00:00Z&endtime=1985-12-31T12:00:00Z&parameters=tday&"
 ```
 is a request to download data on daily temperatures (“parameters=tday&”) from station in Kajaani (based on the FMI station ID, “fmisid=101725”), for the time period starting 1 January 1985 and ending 31.12.1985 (starttime and end time are given in the format year-month-day).
-You can check the URL works by pasting it in your browser.
+
+You should check that the URL works by pasting it in your browser.
 Apart from daily temperature, other daily weather parameters are daily rain "rrday", snow "snow", minimal temperature "tmin", maximal temperature "tmax".
 Note further that FMI has lots of other data, some browsing on their site is needed to work this out.
 For example, URL for wind-speed with 10 minute interval from Hanko during one day.
