@@ -57,3 +57,37 @@ url.tvarminne.rain="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?reque
 rain.tvarminne<-get_met_data(url.tvarminne.rain)
 ```
 
+# Example 2 : downloading data on multiple stations from multiple days
+```
+# FMISID
+# Hanko Tulludden: 100946: 
+# Kimito: 100951
+# Jomala: 100917
+require(XML)
+id.vec<-c(100946,100951,100917)
+start.time.string=c("2010-01-01T00:00:00Z","2010-01-02T00:00:00Z")
+end.time.string=c("2010-01-01T23:50:00Z","2010-01-02T23:50:00Z")
+met.data<-list()
+for (i in 1:length(id.vec)) {
+	for (y in 1:length(start.time.string)) {
+		# create URL address
+		url.addr<-
+		paste("http://data.fmi.fi/fmi-apikey/67cdb8db-2a4d-4679-a617-e21970aa76c3/wfs?request=getFeature&storedquery_id=fmi::observations::weather::timevaluepair&fmisid="
+		, id.vec[i]
+		, "&maxlocations=1&starttime="
+		, start.time.string[y]
+		, "&endtime="
+		, end.time.string[y]
+		,"&parameters=windspeedms&"
+		, sep="")
+		#adds the temperature data to the list
+		mdat<-get.met.data(url.addr) #data 
+		#daily average added to data stored
+		met.data<-rbind(met.data,c(id.vec[i],colMeans(mdat)) ) 
+	} #for (y
+} #for (id
+met.data.frame<-data.frame(met.data)
+names(met.data.frame)[1]<-"FMI.station.ID"
+names(met.data.frame)[5]<-"windspeed"
+head(met.data.frame)
+```
