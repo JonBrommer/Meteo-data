@@ -36,7 +36,7 @@ Get you API key from FMI. The key is a code which you need to insert in the URL 
 # URL with the data you want
 The URL looks daunting, but is a fairly simple structure. For example, the following url
 ```
-url.kajaani.85="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=101725&starttime=1985-01-01T12:00:00Z&endtime=1985-12-31T12:00:00Z&parameters=tday&"
+url.kajaani.85="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=101725&starttime=1985-01-01T12:00:00Z&endtime=1985-12-31T12:00:00Z&parameters=tday"
 ```
 is a request for data on daily temperatures (“parameters=tday&”) from station in Kajaani (based on the FMI station ID, “fmisid=101725”), for the time period starting 1 January 1985 and ending 31.12.1985 (starttime and end time are given in the format year-month-day).
 
@@ -45,7 +45,7 @@ Apart from daily temperature, other daily weather parameters are daily rain "rrd
 Note further that FMI has lots of other data, some browsing on their site is needed to work this out.
 For example, URL for wind-speed with 10 minute interval from Hanko during one day.
 ```
-wind.hanko<-"http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::timevaluepair&fmisid=100917&maxlocations=1&starttime=2013-04-23T00:00:00Z&endtime=2013-04-25T23:50:00Z&parameters=windspeedms&
+wind.hanko<-"http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::timevaluepair&fmisid=100917&maxlocations=1&starttime=2013-04-23T00:00:00Z&endtime=2013-04-25T23:50:00Z&parameters=windspeedms
 ```
 
 # Example 1
@@ -53,9 +53,9 @@ wind.hanko<-"http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getF
 Extract data on daily temperature and rain from a single station (Tvärminne)
 ```
 get.met.data<-dget(“get_met_data.txt”)
-url.tvarminne.temp="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=tday&"
+url.tvarminne.temp="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=tday"
 temp.tvarminne<-get_met_data(url.tvarminne.temp)
-url.tvarminne.rain="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=rrday&"
+url.tvarminne.rain="http://data.fmi.fi/fmi-apikey/INSERT-YOUR-KEY-HERE/wfs?request=getFeature&storedquery_id=fmi::observations::weather::daily::timevaluepair&fmisid=100953&starttime=2013-04-01T12:00:00Z&endtime=2013-12-31T12:00:00Z&parameters=rrday"
 rain.tvarminne<-get_met_data(url.tvarminne.rain)
 ```
 
@@ -80,7 +80,7 @@ for (i in 1:length(id.vec)) {
 		, start.time.string[y]
 		, "&endtime="
 		, end.time.string[y]
-		,"&parameters=windspeedms&"
+		,"&parameters=windspeedms"
 		, sep="")
 		#adds the temperature data to the list
 		mdat<-get.met.data(url.addr) #data 
