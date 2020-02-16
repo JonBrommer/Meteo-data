@@ -19,19 +19,14 @@ Simply copy-paste the function. Alternatively, place the text file in your worki
 get.met.data<-dget(“get_met_data.txt”)
 ```
 
-# Note
-For the function to work, some further steps are needed as described below
-
 # Required R packages
 Package XML needs to be installed.
 
 # FMI open data
  FMI site for Open data. http://en.ilmatieteenlaitos.fi/open-data-manual and related pages
  The function requires that a station is specified, which you find from http://en.ilmatieteenlaitos.fi/observation-stations?p_p_id=stationlistingportlet_WAR_fmiwwwweatherportlets&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-4&p_p_col_count=1&_stationlistingportlet_WAR_fmiwwwweatherportlets_stationGroup=WEATHER
- It works best if you use the FMI Station ID (FIMSID), which can be found from this site.
+ This procedure works best if you use the FMI Station ID (FIMSID), which can be found from this site. 
  
-# API key
-From autumn 2019 onwards, an API key is no longer required.
 
 # URL with the data you want
 The URL looks daunting, but is a fairly simple structure. For example, the following url
