@@ -25,7 +25,7 @@ Package XML needs to be installed.
 # FMI open data
  FMI site for Open data. http://en.ilmatieteenlaitos.fi/open-data-manual and related pages
  The function requires that a station is specified, which you find from http://en.ilmatieteenlaitos.fi/observation-stations?p_p_id=stationlistingportlet_WAR_fmiwwwweatherportlets&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-4&p_p_col_count=1&_stationlistingportlet_WAR_fmiwwwweatherportlets_stationGroup=WEATHER
- This procedure works best if you use the FMI Station ID (FIMSID), which can be found from this site. 
+ This procedure works best if you use the FMI Station ID (FMISID), which can be found from this site. 
  
 
 # URL with the data you want
